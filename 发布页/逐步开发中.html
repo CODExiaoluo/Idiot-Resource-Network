@@ -1,0 +1,95 @@
+<html><head><base href="/" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>笨蛋资源网 - 逐步开发中</title>
+<style>
+    body, html {
+        margin: 0;
+        padding: 0;
+        font-family: '微软雅黑', 'Microsoft YaHei', Arial, sans-serif;
+        background-color: #0f0f23;
+        color: #e0e0ff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .container {
+        text-align: center;
+        padding: 20px;
+        background-color: rgba(20, 20, 50, 0.8);
+        border-radius: 15px;
+        box-shadow: 0 0 30px rgba(100, 100, 255, 0.3);
+    }
+    h1 {
+        font-size: 2.5em;
+        margin-bottom: 20px;
+        color: #00ffff;
+        text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+    }
+    .coming-soon-image {
+        width: 100%;
+        max-width: 600px;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+        margin-bottom: 20px;
+    }
+    .progress-bar {
+        width: 100%;
+        max-width: 400px;
+        height: 20px;
+        background-color: #1a1a40;
+        border-radius: 10px;
+        overflow: hidden;
+        margin: 20px auto;
+    }
+    .progress {
+        width: 0%;
+        height: 100%;
+        background-color: #00ffff;
+        animation: progressAnimation 3s ease-in-out infinite alternate;
+    }
+    @keyframes progressAnimation {
+        0% { width: 0%; }
+        100% { width: 75%; }
+    }
+    p {
+        font-size: 1.2em;
+        margin-bottom: 20px;
+    }
+    .glow {
+        animation: glow 2s ease-in-out infinite alternate;
+    }
+    @keyframes glow {
+        from { text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 15px #00ffff; }
+        to { text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff; }
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="glow">逐步开发中</h1>
+        <img src="https://page-images.websim.ai/%E9%80%90%E6%AD%A5%E5%BC%80%E5%8F%91%E4%B8%AD%EF%BC%8C%E5%B1%95%E7%A4%BA%E4%BA%86%E7%BC%96%E7%A8%8B%E4%BB%A3%E7%A0%81%E5%92%8C%E8%BF%9B%E5%BA%A6%E6%9D%A1_600x400x9MaoCsNIM9Vt9UJd6xf325b7a3dea8c.jpg" alt="逐步开发中，展示了编程代码和进度条" class="coming-soon-image">
+        <div class="progress-bar">
+            <div class="progress"></div>
+        </div>
+        <p>我们正在努力为您打造更多精彩内容！</p>
+        <p>敬请期待，精彩即将呈现！</p>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const progressBar = document.querySelector('.progress');
+            let progress = 0;
+            const interval = setInterval(() => {
+                progress += Math.random() * 5;
+                if (progress >= 75) {
+                    progress = 75;
+                    clearInterval(interval);
+                }
+                progressBar.style.width = `${progress}%`;
+            }, 200);
+        });
+    </script>
+</body>
+</html>

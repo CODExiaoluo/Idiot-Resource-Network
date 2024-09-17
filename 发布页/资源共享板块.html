@@ -1,0 +1,246 @@
+<html><head><base href="/" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>笨蛋资源网 - 资源共享板块</title>
+<style>
+    body, html {
+        margin: 0;
+        padding: 0;
+        font-family: '微软雅黑', 'Microsoft YaHei', Arial, sans-serif;
+        background-color: #0f172a;
+        color: #e2e8f0;
+    }
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    header {
+        background-color: rgba(15, 23, 42, 0.8);
+        color: #38bdf8;
+        text-align: center;
+        padding: 2em;
+        margin-bottom: 30px;
+        border-bottom: 2px solid #38bdf8;
+    }
+    h1, h2 {
+        margin: 0;
+        font-size: 2.5em;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        text-shadow: 0 0 10px #38bdf8;
+    }
+    h2 {
+        font-size: 2em;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+    .resource-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+    .resource-item {
+        background-color: rgba(30, 41, 59, 0.7);
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(56, 189, 248, 0.2);
+        transition: all 0.3s ease;
+        display: flex;
+        flex-direction: column;
+    }
+    .resource-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(56, 189, 248, 0.4);
+    }
+    .resource-item .content {
+        padding: 25px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .resource-item h3 {
+        margin-top: 0;
+        color: #38bdf8;
+        font-size: 1.5em;
+    }
+    .resource-item p {
+        margin-bottom: 20px;
+        line-height: 1.6;
+    }
+    .resource-item a, .resource-item button {
+        display: inline-block;
+        background-color: #38bdf8;
+        color: #0f172a;
+        text-decoration: none;
+        padding: 12px 20px;
+        border-radius: 25px;
+        transition: all 0.3s ease;
+        border: none;
+        cursor: pointer;
+        font-size: 1em;
+        font-weight: bold;
+        text-align: center;
+    }
+    .resource-item a:hover, .resource-item button:hover {
+        background-color: #0ea5e9;
+        box-shadow: 0 0 15px rgba(56, 189, 248, 0.8);
+    }
+    .resource-item img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-bottom: 2px solid #38bdf8;
+    }
+    footer {
+        background-color: rgba(15, 23, 42, 0.8);
+        color: #38bdf8;
+        text-align: center;
+        padding: 1.5em;
+        margin-top: 40px;
+        border-top: 2px solid #38bdf8;
+    }
+    #uploadForm {
+        display: none;
+        background-color: rgba(30, 41, 59, 0.9);
+        padding: 30px;
+        border-radius: 15px;
+        margin-top: 30px;
+    }
+    #uploadForm input, #uploadForm textarea {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 15px;
+        border-radius: 8px;
+        border: 1px solid #38bdf8;
+        background-color: rgba(15, 23, 42, 0.8);
+        color: #e2e8f0;
+        font-size: 1em;
+    }
+    #uploadForm button {
+        background-color: #38bdf8;
+        color: #0f172a;
+        border: none;
+        padding: 12px 25px;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-size: 1em;
+        font-weight: bold;
+    }
+    #uploadForm button:hover {
+        background-color: #0ea5e9;
+        box-shadow: 0 0 15px rgba(56, 189, 248, 0.8);
+    }
+    .contact-info {
+        margin-top: 10px;
+        font-size: 0.9em;
+        color: #94a3b8;
+    }
+</style>
+</head>
+<body>
+    <header>
+        <h1>笨蛋资源网</h1>
+    </header>
+    
+    <div class="container">
+        <h2>资源共享板块</h2>
+        
+        <div class="resource-grid">
+            <div class="resource-item">
+                <img src="https://cdn.pixabay.com/photo/2018/05/08/08/44/artificial-intelligence-3382507_1280.jpg" alt="GitHub代码仓库" width="400" height="200">
+                <div class="content">
+                    <h3>GitHub主页</h3>
+                    <p>探索我的开源项目和代码贡献。在这里，你可以找到各种有趣的项目和实用的工具。</p>
+                    <a href="https://github.com/CODExiaoluo" target="_blank">访问GitHub</a>
+                </div>
+            </div>
+            
+            <div class="resource-item">
+                <img src="https://page-images.websim.ai/%E7%BD%91%E7%9B%98%E8%B5%84%E6%BA%90_1024x353xxwoi93QGNKRYfj3Pmx366ae87b8de96.jpg" alt="网盘资源" width="400" height="200">
+                <div class="content">
+                    <h3>网盘分享资源</h3>
+                    <p>海量学习资料和工具，助你提升技能，拓展知识。百度网盘链接方便快捷，随时获取所需资源。</p>
+                    <a href="https://pan.baidu.com/s/1xxxxxxxx" target="_blank">网盘链接：940449282</a>
+                </div>
+            </div>
+            
+            <div class="resource-item">
+                <img src="https://cdn.pixabay.com/photo/2016/06/03/13/57/digital-marketing-1433427_1280.jpg" alt="上传资源" width="400" height="200">
+                <div class="content">
+                    <h3>上传资源</h3>
+                    <p>分享你的知识和资源，让我们共同成长！你的贡献将帮助更多人学习和发展。</p>
+                    <button onclick="toggleUploadForm()">上传资源</button>
+                </div>
+            </div>
+
+            <div class="resource-item">
+                <img src="https://cdn.pixabay.com/photo/2017/12/02/14/38/contact-us-2993000_1280.jpg" alt="在线联系" width="400" height="200">
+                <div class="content">
+                    <h3>在线联系</h3>
+                    <p>随时与我联系，交流资源和技术问题。无论是通过Telegram还是QQ，我都会及时回复你的咨询。</p>
+                    <a href="https://t.me/lovebase123" target="_blank">Telegram: @lovebase123</a>
+                    <div class="contact-info">QQ: 2729855145</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 上传表单 -->
+        <div id="uploadForm" style="display: none;">
+            <h3>上传新资源</h3>
+            <input type="text" id="resourceName" placeholder="资源名称" required>
+            <input type="url" id="resourceUrl" placeholder="资源链接" required>
+            <textarea id="resourceDescription" placeholder="资源描述" required></textarea>
+            <button onclick="submitResource()">提交资源</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 笨蛋资源网。共享知识，成就未来。</p>
+    </footer>
+
+    <script>
+        function toggleUploadForm() {
+            const form = document.getElementById('uploadForm');
+            form.style.display = form.style.display === 'none' ? 'block' : 'none';
+        }
+
+        function submitResource() {
+            const name = document.getElementById('resourceName').value;
+            const url = document.getElementById('resourceUrl').value;
+            const description = document.getElementById('resourceDescription').value;
+
+            if (name && url && description) {
+                // 这里应该是将数据发送到服务器的代码
+                // 由于这是纯前端演示，我们只是模拟添加到页面
+                const resourceGrid = document.querySelector('.resource-grid');
+                const newItem = document.createElement('div');
+                newItem.className = 'resource-item';
+                newItem.innerHTML = `
+                    <img src="https://cdn.pixabay.com/photo/2017/01/31/15/33/file-2025502_1280.png" alt="新上传的资源" width="400" height="200">
+                    <div class="content">
+                        <h3>${name}</h3>
+                        <p>${description}</p>
+                        <a href="${url}" target="_blank">查看资源</a>
+                    </div>
+                `;
+                resourceGrid.appendChild(newItem);
+
+                // 清空表单
+                document.getElementById('resourceName').value = '';
+                document.getElementById('resourceUrl').value = '';
+                document.getElementById('resourceDescription').value = '';
+
+                // 隐藏表单
+                toggleUploadForm();
+
+                alert('资源已成功添加！感谢你的分享。');
+            } else {
+                alert('请填写所有必填字段！');
+            }
+        }
+    </script>
+</body>
+</html>
