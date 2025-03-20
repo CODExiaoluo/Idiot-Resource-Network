@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>技术教程 - 笨蛋资源网</title>
+    
+    <!-- 使用相同的base64 favicon -->
+    <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHJ4PSI0IiBmaWxsPSIjMDBmZmZmIi8+PHRleHQgeD0iNCIgeT0iMTIiIGZpbGw9IiNmZmYiIGZvbnQtc2l6ZT0iMTAiPkI8L3RleHQ+PC9zdmc+" type="image/svg+xml">
+    
+    <style>
+        :root {
+            --primary-bg: #F5E6E8;
+            --secondary-bg: #FFDAC1;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            font-family: '微软雅黑', sans-serif;
+            background: linear-gradient(135deg, var(--primary-bg), var(--secondary-bg));
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 90%;
+            margin: 40px auto;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            background: linear-gradient(120deg, #7B68EE, #4169E1);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .tutorial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .tutorial-card {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .tutorial-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .tutorial-card h3 {
+            color: #7B68EE;
+            margin: 0 0 15px 0;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 30px;
+            color: #666;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .back-link:hover {
+            color: #7B68EE;
+        }
+
+        .tutorial-link {
+            display: inline-block;
+            background: linear-gradient(45deg, #7B68EE, #4169E1);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            margin-top: 15px;
+            transition: transform 0.3s;
+        }
+
+        .tutorial-link:hover {
+            transform: translateX(5px);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 20px auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>技术教程中心</h1>
+        <div class="tutorial-grid">
+            <div class="tutorial-card">
+                <h3>Web开发基础</h3>
+                <p>HTML、CSS和JavaScript的基础知识学习。</p>
+                <a href="https://developer.mozilla.org/zh-CN/" class="tutorial-link" target="_blank">MDN教程</a>
+            </div>
+            <div class="tutorial-card">
+                <h3>Python入门</h3>
+                <p>Python编程语言的基础教程和实践。</p>
+                <a href="https://www.python.org/about/gettingstarted/" class="tutorial-link" target="_blank">开始学习</a>
+            </div>
+            <div class="tutorial-card">
+                <h3>AI开发基础</h3>
+                <p>人工智能和机器学习的入门指南。</p>
+                <a href="https://www.tensorflow.org/tutorials?hl=zh-cn" class="tutorial-link" target="_blank">TensorFlow教程</a>
+            </div>
+        </div>
+        <a href="../index.html" class="back-link">返回首页</a>
+    </div>
+</body>
+</html> 

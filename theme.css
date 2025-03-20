@@ -1,0 +1,255 @@
+:root {
+  /* 主题色板 */
+  --primary-bg: #F5E6E8;
+  --secondary-bg: #FFDAC1;
+  --accent-color: #FF9A8B;
+  --text-primary: #4A4A4A;
+  --text-secondary: #666666;
+  
+  /* 动画时间 */
+  --animation-duration: 400ms;
+  --animation-easing: cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* 间距系统 */
+  --spacing-xs: clamp(0.5rem, 1vw, 0.75rem);
+  --spacing-sm: clamp(1rem, 2vw, 1.5rem);
+  --spacing-md: clamp(1.5rem, 3vw, 2rem);
+  --spacing-lg: clamp(2rem, 4vw, 3rem);
+
+  /* 颜色系统 */
+  --color-primary: #F5E6E8;
+  --color-secondary: #FFDAC1;
+  --color-accent: #FF9A8B;
+  --color-text: #4A4A4A;
+  --color-text-light: #666666;
+  
+  /* 阴影系统 */
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
+  --shadow-md: 0 4px 8px rgba(0,0,0,0.1);
+  --shadow-lg: 0 8px 16px rgba(0,0,0,0.1);
+  
+  /* 圆角系统 */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+  
+  /* 动画系统 */
+  --transition-fast: 150ms;
+  --transition-normal: 300ms;
+  --transition-slow: 500ms;
+  --easing-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* 间距系统 */
+  --space-unit: 0.25rem;
+  --space-1: calc(var(--space-unit) * 1);
+  --space-2: calc(var(--space-unit) * 2);
+  --space-4: calc(var(--space-unit) * 4);
+  --space-8: calc(var(--space-unit) * 8);
+}
+
+/* 减弱动画偏好支持 */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* 添加更多响应式断点 */
+@media (min-width: 768px) {
+  :root {
+    --spacing-md: clamp(2rem, 4vw, 2.5rem);
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --spacing-lg: clamp(2.5rem, 5vw, 3.5rem);
+  }
+}
+
+@media (min-width: 1280px) {
+  :root {
+    --spacing-xl: clamp(3rem, 6vw, 4rem);
+  }
+}
+
+/* 添加动画装饰元素 */
+[data-theme="cartoon"] {
+  --decoration-color: var(--accent-color);
+}
+
+/* 添加装饰元素动画 */
+.decoration-item {
+  position: absolute;
+  pointer-events: none;
+  will-change: transform, opacity;
+  contain: layout style paint;
+}
+
+/* 基础动画 */
+@keyframes float-vertical {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes float-horizontal {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(15px); }
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes scale-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+/* 组合动画 */
+.float-combo {
+  animation: 
+    float-vertical 3s ease-in-out infinite,
+    float-horizontal 5s ease-in-out infinite;
+}
+
+.pulse-rotate {
+  animation: 
+    scale-pulse 2s ease-in-out infinite,
+    rotate 8s linear infinite;
+}
+
+/* 交互动画 */
+.hover-lift {
+  transition: transform 0.3s var(--animation-easing);
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px);
+}
+
+/* 滚动动画 */
+.scroll-fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 
+    opacity 0.6s var(--animation-easing),
+    transform 0.6s var(--animation-easing);
+}
+
+.scroll-fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 移动端 */
+@media (max-width: 480px) {
+  :root {
+    --base-font-size: 14px;
+  }
+}
+
+/* 平板竖屏 */
+@media (min-width: 481px) and (max-width: 768px) {
+  :root {
+    --base-font-size: 15px;
+  }
+}
+
+/* 平板横屏 */
+@media (min-width: 769px) and (max-width: 1024px) {
+  :root {
+    --base-font-size: 16px;
+  }
+}
+
+/* 小型桌面显示器 */
+@media (min-width: 1025px) and (max-width: 1200px) {
+  :root {
+    --base-font-size: 17px;
+  }
+}
+
+/* 大型桌面显示器 */
+@media (min-width: 1201px) {
+  :root {
+    --base-font-size: 18px;
+  }
+}
+
+/* 添加图标字体 */
+@font-face {
+  font-family: 'iconfont';
+  src: url('//at.alicdn.com/t/font_xxxx.woff2') format('woff2');
+}
+
+.icon {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--text-primary);
+}
+
+.resource-item {
+    contain: content;
+    content-visibility: auto;
+    contain-intrinsic-size: 0 500px;
+    will-change: transform;
+}
+
+.resource-item img {
+    backface-visibility: hidden;
+    transform: translateZ(0);
+}
+
+/* 优化动画性能 */
+@media (prefers-reduced-motion: no-preference) {
+    .decoration-item {
+        will-change: transform;
+    }
+}
+
+/* 补充响应式断点细节 */
+@media (max-width: 320px) {
+  :root {
+    --base-font-size: 12px;
+    --container-padding: 10px;
+  }
+}
+
+@media (min-width: 321px) and (max-width: 480px) {
+  :root {
+    --base-font-size: 14px;
+    --container-padding: 15px;
+  }
+}
+
+/* 添加更细致的响应式布局控制 */
+.resource-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+    gap: var(--spacing-md);
+    
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
+    }
+}
+
+/* 添加最小屏幕断点 */
+@media (max-width: 320px) {
+    .resource-item {
+        margin: var(--spacing-xs) 0;
+    }
+    
+    .decoration-item {
+        display: none; /* 在最小屏幕上隐藏装饰元素 */
+    }
+} 
